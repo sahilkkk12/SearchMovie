@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SearchMoviesAPI</string>
+    <string name="Orientation">Orientation</string>
+</resources>

@@ -1,0 +1,62 @@
+plugins {
+    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.jetbrainsKotlinAndroid)
+}
+
+android {
+    namespace 'com.example.searchmoviesapi'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.searchmoviesapi"
+        minSdk 26
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+    buildFeatures{
+        viewBinding = true
+    }
+
+}
+
+dependencies
+        {
+    implementation 'com.github.sahilkkk12:api:3.3.3'
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.18.4'
+    implementation 'com.google.android.exoplayer:exoplayer-ui:2.18.4'
+    implementation 'com.google.android.exoplayer:exoplayer-dash:2.18.1'
+    implementation 'com.google.android.exoplayer:exoplayer-hls:2.18.1'
+    implementation 'com.google.android.exoplayer:exoplayer-smoothstreaming:2.18.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1' // ViewModel
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1' // Livedata
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0' // Retrofit
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0' //Gson converter
+    implementation 'androidx.recyclerview:recyclerview:1.2.1' // RecyclerView library
+    implementation 'com.squareup.picasso:picasso:2.71828' // Imageloading library
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.material
+    implementation libs.androidx.activity
+    implementation libs.androidx.constraintlayout
+    implementation libs.androidx.media3.ui
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.junit
+    androidTestImplementation libs.androidx.espresso.core
+}

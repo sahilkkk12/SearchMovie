@@ -1,0 +1,108 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Container for Poster Image, ExoPlayer View, and PiP Button -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+
+        <!-- Poster Image -->
+        <ImageView
+            android:id="@+id/movieDetailPoster"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintDimensionRatio="2:3" />
+
+        <!-- ExoPlayer View (Initially Hidden) -->
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/player_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            app:layout_constraintDimensionRatio="2:3"
+            tools:visibility="visible" />
+
+        <!-- Play Button and PiP Button stacked vertically -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+
+            <!-- Play Button -->
+            <ImageView
+                android:id="@+id/playerview"
+                android:layout_width="64dp"
+                android:layout_height="50dp"
+                android:src="@drawable/images" />
+        </LinearLayout>
+
+        <!-- PiP Button (Positioned in the bottom-right corner of the poster) -->
+
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/pipButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="8dp"
+        android:visibility="visible"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/pip" />
+
+    <!-- Actors TextView -->
+
+    <ImageView
+        android:id="@+id/rotate"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="1dp"
+        android:contentDescription="@string/Orientation"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/rotate" />
+
+    <TextView
+        android:id="@+id/actorsTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:layout_marginTop="1dp"
+        android:text="Actors: " />
+
+    <!-- Director TextView -->
+    <TextView
+        android:id="@+id/directorTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="20dp"
+        android:text="Director: " />
+
+    <!-- Description TextView -->
+    <TextView
+        android:id="@+id/descriptionTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:padding="20dp"
+        android:text="Description here" />
+
+    <!-- Toggle Button for Description -->
+    <Button
+        android:id="@+id/toggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="More" />
+
+</LinearLayout>
